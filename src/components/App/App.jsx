@@ -16,12 +16,14 @@ export default function App() {
 
   useEffect(() => {
     const localContacts = localStorage.getItem("contacts");
+
     if (localContacts) {
       setContacts(JSON.parse(localContacts));
     }
   }, []);
 
   useEffect(() => {
+    console.log("Update");
     localStorage.setItem("contacts", JSON.stringify(contacts));
   }, [contacts]);
 
